@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kevin Al Faridzi — Portofolio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+  /* ====== RESET & ROOT ====== */
+  /* ====== RESET & ROOT ====== */
+:root{
+  --bg:#0a0a0f; /* latar gelap pekat */
+  --card:#12121a; /* card sedikit lebih terang */
+  --muted:#b3b3c6; /* teks abu keunguan */
+  --text:#f5f5ff; /* teks utama putih kebiruan */
+  --accent:#ff3cac; /* pink neon */
+  --accent-2:#2ad2ff; /* biru toska neon */
+  --glass: rgba(255,255,255,0.03);
+  --maxw:1100px;
+  --radius:12px;
+  --blur:8px;
+}
+
+body{
+  margin:0;
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;
+  background: radial-gradient(circle at top left, rgba(255,60,172,0.05), transparent),
+              radial-gradient(circle at bottom right, rgba(42,210,255,0.05), transparent),
+              var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+  padding-bottom:80px;
+}
+
+/* tombol utama */
+.btn{
+  background:linear-gradient(90deg, var(--accent), var(--accent-2));
+  color:#fff;
+  padding:12px 18px;
+  border-radius:10px;
+  font-weight:700;
+  text-decoration:none;
+  box-shadow:0 0 10px rgba(255,60,172,0.4);
+  transition:all 0.25s ease;
+}
+.btn:hover{
+  box-shadow:0 0 20px rgba(255,60,172,0.8);
+  transform:translateY(-2px);
+}
+
+/* tombol ghost */
+.btn.ghost{
+  background:transparent;
+  border:1px solid var(--accent);
+  color:var(--accent);
+  transition:all 0.25s ease;
+}
+.btn.ghost:hover{
+  background:var(--accent);
+  color:#fff;
+  box-shadow:0 0 15px rgba(255,60,172,0.6);
+}
+
+/* kartu / panel */
+.panel{
+  background:var(--card);
+  margin:28px 0;
+  padding:26px;
+  border-radius:var(--radius);
+  box-shadow:0 4px 20px rgba(0,0,0,0.6);
+  transition:transform 0.2s ease, box-shadow 0.2s ease;
+}
+.panel:hover{
+  transform:translateY(-2px);
+  box-shadow:0 6px 24px rgba(255,60,172,0.2);
+}
+
+/* link utama */
+a.link{
+  color:var(--accent);
+  text-decoration:none;
+}
+a.link:hover{
+  text-shadow:0 0 6px var(--accent);
+}
+
+/* skill bar */
+.bar > span{
+  background:linear-gradient(90deg,var(--accent),var(--accent-2));
+  box-shadow:0 0 6px rgba(255,60,172,0.4);
+}
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial;
+    background: radial-gradient(1200px 600px at 10% 10%, rgba(77,208,225,0.03), transparent),
+                radial-gradient(1000px 500px at 90% 90%, rgba(94,242,181,0.02), transparent),
+                var(--bg);
+    color:var(--text);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    line-height:1.5;
+    padding-bottom:80px;
+  }
+  .container{max-width:var(--maxw);margin:0 auto;padding:28px;}
+
+  /* ====== NAV ====== */
+  header.nav{
+    position:sticky;top:0;z-index:40;
+    backdrop-filter: blur(var(--blur));
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .brand{font-weight:800;letter-spacing:0.4px}
+  nav.links{display:flex;gap:18px;align-items:center}
+  nav.links a{color:var(--muted);text-decoration:none;font-weight:600;font-size:15px}
+  .icon-btn{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:8px;border-radius:10px;color:var(--muted);cursor:pointer}
+  .toggle{display:flex;gap:8px;align-items:center}
+
+  /* ====== HERO ====== */
+  .hero{display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:center;padding:56px 0}
+  .hero-left h3{color:var(--muted);margin:0 0 8px 0}
+  .hero-left h1{font-size:44px;margin:0;line-height:1.02}
+  .accent{color:var(--accent)}
+  .lead{color:var(--muted);margin-top:12px;max-width:640px}
+  .cta{margin-top:20px;display:flex;gap:12px;flex-wrap:wrap}
+  .btn{background:var(--accent);color:#072018;padding:12px 18px;border-radius:10px;font-weight:700;text-decoration:none}
+  .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+
+  .hero-right{
+    display:flex;flex-direction:column;align-items:center;gap:18px;
+  }
+  .profile-card{
+    width:320px;max-width:100%;padding:18px;border-radius:16px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));
+    border:1px solid rgba(255,255,255,0.03);box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+    text-align:center;
+  }
+  .profile-card img{width:180px;height:180px;border-radius:999px;object-fit:cover;border:6px solid rgba(0,0,0,0.25);display:block;margin:0 auto}
+  .profile-name{margin-top:12px;font-weight:800}
+  .profile-role{color:var(--muted);font-weight:600;font-size:14px;margin-top:6px}
+
+  /* ====== PANELS ====== */
+  .panel{background:var(--card);margin:28px 0;padding:26px;border-radius:var(--radius);box-shadow:0 12px 40px rgba(0,0,0,0.5)}
+  .panel h2{margin:0 0 8px 0;font-size:22px}
+  .muted{color:var(--muted)}
+
+  /* ====== ABOUT & TIMELINE ====== */
+  .about-grid{display:grid;grid-template-columns:1fr 360px;gap:20px;align-items:start}
+  .bio{font-size:15px;color:var(--muted);line-height:1.7}
+  .timeline{background:var(--glass);padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
+  .timeline li{margin-bottom:12px;list-style:none}
+  .timeline time{display:block;font-weight:700}
+  .timeline p{margin:6px 0 0;color:var(--muted);font-size:14px}
+
+  /* ====== SKILLS ====== */
+  .skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .skill{
+    padding:10px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
+    border:1px solid rgba(255,255,255,0.02)
+  }
+  .skill h4{margin:0 0 6px 0}
+  .bar{height:10px;background:rgba(255,255,255,0.04);border-radius:999px;overflow:hidden}
+  .bar > span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent-2));border-radius:999px;transition:width 900ms cubic-bezier(.2,.9,.3,1)}
+
+  /* ====== PROJECTS ====== */
+  .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+  .project-card{background:linear-gradient(0deg, rgba(0,0,0,0.25), rgba(0,0,0,0.18));padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
+  .project-card img{width:100%;height:140px;object-fit:cover;border-radius:8px}
+  .project-card h4{margin:10px 0 4px 0}
+
+  /* modal */
+  .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.6);z-index:80;padding:20px}
+  .modal-inner{background:var(--card);padding:18px;border-radius:12px;max-width:820px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,0.6)}
+  .modal .close{float:right;border:0;background:transparent;color:var(--muted);cursor:pointer}
+
+  /* ====== TESTIMONIAL ====== */
+  .test-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+  .test-card{background:var(--glass);padding:14px;border-radius:10px;border:1px solid rgba(255,255,255,0.02)}
+
+  /* ====== CONTACT ====== */
+  .contact-grid{display:grid;grid-template-columns:1fr 360px;gap:18px}
+  form input, form textarea{
+    width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text);resize:none;margin-bottom:10px
+  }
+
+  /* ====== FOOTER ====== */
+  .footer{margin-top:36px;color:var(--muted);text-align:center;font-size:14px}
+
+  /* ====== small screens ====== */
+  @media (max-width:960px){
+    .hero{grid-template-columns:1fr; padding:28px 0}
+    .about-grid,.contact-grid{grid-template-columns:1fr}
+    nav.links{display:none}
+    .profile-card{width:260px}
+  }
+  @media (max-width:540px){
+    .container{padding:16px}
+    .hero-left h1{font-size:28px}
+    .profile-card img{width:140px;height:140px}
+  }
+
+  /* small utilities */
+  .row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+  a.link{color:var(--accent);text-decoration:none}
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="brand">Kevin Al Faridzi</div>
+
+      <nav class="links" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="toggle">
+        <button id="downloadBtn" class="icon-btn" title="Download CV"><!---📄 Hidden Gem---></button>
+        <button id="menuMobile" class="icon-btn" title="Menu">≡</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" id="home">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="introTitle">
+      <div class="hero-left">
+        <h3>Halo, perkenalkan</h3>
+        <h1 id="introTitle">I'm <span class="accent">Kevin Al Faridzi</span></h1>
+        <div style="height:12px"></div>
+        <div class="typing muted" aria-hidden="true" style="font-weight:700;color:var(--muted);"> <span id="typed">Web Programming</span> • <span id="typed2">UI & UX Desaign</span> • <span id="typed3">Database Fundamentals</span></div>
+        <p class="lead">Saya pelajar SMK yang hobi membuat website. Fokus belajar HTML, CSS, JS, UI & UX, database. Proyek-proyek saya sederhana tapi siap dipelajari dan dikembangkan.</p>
+
+        <div class="cta">
+          <a class="btn" href="#projects">View Projects</a>
+          <a class="btn ghost" href="#contact">Contact Me</a>
+          <a class="link" href="#about" style="align-self:center">Read more →</a>
+        </div>
+
+        <div style="margin-top:16px;color:var(--muted)">
+          <a class="link" href="https://www.instagram.com/kvnlfrdzz/" id="instagram">Instagram</a> ·
+          <a class="link" href="https://github.com/kvnlfrdzz" id="github">GitHub</a> ·
+          <a class="link" href="https://wa.me/6282295666240" id="whatsapp">WhatsApp</a>
+        </div>
+      </div>
+
+      <aside class="hero-right" aria-labelledby="profileName">
+        <div class="profile-card" role="img" aria-label="Foto profil Kevin">
+          <!-- Default placeholder image (SVG) - replace src to use your photo -->
+          <img id="profileImg" src="profile.jpg" alt="Kevin Al Faridzi — profile image" />
+
+
+          <div class="profile-name" id="profileName">Kevin Al Faridzi</div>
+          <div class="profile-role">Student & Web Developer</div>
+          <div style="margin-top:10px">
+            <small class="muted">Based in Indonesia • Available for internship</small>
+          </div>
+        </div>
+
+        <div style="width:100%;display:flex;justify-content:center">
+          <button id="downloadCV" class="icon-btn" style="margin-right:8px"><!---Hidden Gem---></button>
+          <button id="copyEmail" class="icon-btn">Copy Email</button>
+        </div>
+      </aside>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="panel" aria-labelledby="aboutTitle">
+      <h2 id="aboutTitle">About Me</h2>
+      <div class="about-grid">
+        <div>
+          <p class="bio">
+            Hai, saya Kevin. Saya tertarik pada UI & UX, terutama frontend dan backend.
+            Saya sedang belajar mengembangkan website serta database. Saya suka membangun proyek kecil untuk latihan
+            dan menulis dokumentasi yang jelas.
+          </p>
+
+          <h3 style="margin-top:18px">Core values</h3>
+          <ul class="muted">
+            <li>Disiplin & Konsistensi</li>
+            <li>Belajar sambil praktek</li>
+            <li>Beretika & bertanggung jawab</li>
+          </ul>
+
+          <h3 style="margin-top:18px">Education</h3>
+          <p class="muted">Kelas 10 SMK — Skye Digipreneur. Pilihan jurusan: PPLG (berfokus ke programming & membuat aplikasi).</p>
+        </div>
+
+        <aside class="timeline" aria-label="Timeline singkat">
+          <h4 style="margin:0 0 12px 0">Timeline</h4>
+          <ul>
+            <li><time>2024</time><p>Mulai belajar HTML, membuat halaman sederhana.</p></li>
+            <li><time>2025 (Q1)</time><p>Belajar Server dan Hosting.</p></li>
+            <li><time>2025 (Q2)</time><p>Mulai mempelajari CSS, JavaScript, UI & UX, Basic Database.</p></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="panel" aria-labelledby="skillsTitle">
+      <h2 id="skillsTitle">Skills</h2>
+      <p class="muted">Berikut skill yang sedang saya asah.</p>
+
+      <div class="skills-grid" style="margin-top:12px">
+        <div class="skill">
+          <h4>HTML</h4>
+          <div class="bar" data-value="70"><span></span></div>
+        </div>
+        <div class="skill">
+          <h4>CSS (Flex, Grid, Animations)</h4>
+          <div class="bar" data-value="20"><span></span></div>
+        </div>
+        <div class="skill">
+          <h4>JavaScript</h4>
+          <div class="bar" data-value="10"><span></span></div>
+        </div>
+        <div class="skill">
+          <h4>UI & UX</h4>
+          <div class="bar" data-value="35"><span></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="panel" aria-labelledby="projectsTitle">
+      <h2 id="projectsTitle">Projects</h2>
+      <p class="muted">Beberapa proyek latihan — klik untuk melihat detail.</p>
+
+      <div class="projects-grid" style="margin-top:12px">
+        <!-- Project 1 -->
+        <article class="project-card" data-title="Portfolio V1" data-desc="Simple responsive portfolio built with HTML/CSS/JS" data-img="">
+          <img src="Screenshot 2025-08-13 171514.png" alt="Foto Profil" width="200" height="200"> 
+<h4>Website Portofolio</h4>
+<p class="muted" style="font-size:14px">Website portofolio layout — responsive dan clean.</p>
+<div style="margin-top:10px"><button class="icon-btn viewProject">View</button></div>
+</article>
+
+        <!-- Project 2 -->
+        <article class="project-card" data-title="Simple Todo App" data-desc="Todo app using localStorage for persistence" data-img="">
+          <img src="Screenshot 2025-08-13 170856.png" alt="Foto Profil" width="200" height="200">
+          <h4>Latihan Membuat Website</h4>
+          <p class="muted" style="font-size:14px">Latihan membuat website sederhana menggunakan HTML - simple</p>
+          <div style="margin-top:10px"><button class="icon-btn viewProject">View</button></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- TESTIMONIAL --
+    <section id="testimoni" class="panel" aria-labelledby="testiTitle">
+      <h2 id="testiTitle">Testimonials</h2>
+      <div class="test-grid" style="margin-top:12px">
+        <div class="test-card"><strong>Guru</strong><p class="muted">Kevin rajin belajar dan cepat menangkap konsep.</p></div>
+        <div class="test-card"><strong>Teman</strong><p class="muted">Kerja bareng Kevin enak, komunikasinya jelas.</p></div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="panel" aria-labelledby="contactTitle">
+      <h2 id="contactTitle">Contact</h2>
+      <div class="contact-grid">
+        <div>
+          <form id="contactForm" action="#" onsubmit="return false;">
+            <input type="text" id="name" placeholder="Your name" required />
+            <input type="email" id="email" placeholder="Your email" required />
+            <input type="text" id="subject" placeholder="Subject" />
+            <textarea id="message" rows="6" placeholder="Your message" required></textarea>
+            <div style="display:flex;gap:10px">
+              <button id="sendBtn" class="btn" type="button">Kirim</button>
+              <button id="resetBtn" class="btn ghost" type="reset">Reset</button>
+            </div>
+          </form>
+        </div>
+
+        <aside>
+          <h4>Get in touch</h4>
+          <p class="muted">Email: <a href="mailto:kevinalfaridzi5555@gmail.com" class="link" id="emailLink">kevinalfaridzi5555@gmail.com</a></p>
+          <p class="muted">Phone: <span class="muted">+62 822 9566 6240</span></p>
+
+          <div style="margin-top:12px">
+            <button id="openDiscord" class="icon-btn">Discord (demo)</button>
+            <button id="openGithub" class="icon-btn">GitHub</button>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <footer class="footer">
+      © <span id="year"></span> Kevin Al Faridzi
+    </footer>
+  </main>
+
+  <!-- Project Modal -->
+  <div id="modal" class="modal" role="dialog" aria-modal="true">
+    <div class="modal-inner">
+      <button class="close" id="closeModal">✕</button>
+      <h3 id="modalTitle"></h3>
+      <p id="modalDesc" class="muted"></p>
+      <div id="modalImg" style="margin-top:12px"></div>
+    </div>
+  </div>
+
+  <script>
+  // ========== Basic DOM helpers ==========
+  const $ = sel => document.querySelector(sel);
+  const $$ = sel => Array.from(document.querySelectorAll(sel));
+
+  // Set year
+  $('#year').textContent = new Date().getFullYear();
+
+  // ====== Replace profile image easily ======
+  // If you want to use your own photo, put file in same folder and change this src
+  // Example: document.getElementById('profileImg').src = 'profile.jpg';
+  // (You can uncomment next line if you saved profile.jpg in same folder)
+  // document.getElementById('profileImg').src = 'profile.jpg';
+
+  // ====== Typing effect (simple) ======
+  const phrases = ["Web Programming","UI & UX Desaign","Database Fundamentals"];
+  let ti=0, ci=0;
+  function typeLoop(){
+    const el = document.getElementById('typed');
+    const text = phrases[ti];
+    el.textContent = text.slice(0, ci);
+    ci++;
+    if(ci > text.length){
+      // pause then next
+      setTimeout(()=>{ ci=0; ti = (ti+1)%phrases.length; typeLoop(); }, 1000);
+    } else {
+      setTimeout(typeLoop, 90);
+    }
+  }
+  // initialize typing on load (for first typed span)
+  setTimeout(typeLoop, 600);
+
+  // ====== Skills animation when in viewport ======
+  function animateSkills(){
+    const bars = document.querySelectorAll('.bar');
+    bars.forEach(b => {
+      const val = b.dataset.value || 60;
+      const span = b.querySelector('span');
+      if(!span) return;
+      const rect = b.getBoundingClientRect();
+      if(rect.top < window.innerHeight - 80){
+        span.style.width = val + '%';
+      }
+    });
+  }
+  window.addEventListener('scroll', animateSkills);
+  window.addEventListener('load', animateSkills);
+
+  // ====== Project modal ======
+  const modal = $('#modal');
+  const modalTitle = $('#modalTitle');
+  const modalDesc = $('#modalDesc');
+  const modalImg = $('#modalImg');
+  $$('.viewProject').forEach(btn=>{
+    btn.addEventListener('click', (e)=>{
+      const card = e.target.closest('.project-card');
+      modalTitle.textContent = card.dataset.title;
+      modalDesc.textContent = card.dataset.desc;
+      const img = card.querySelector('img').cloneNode();
+      img.style.width = '100%';
+      modalImg.innerHTML = '';
+      modalImg.appendChild(img);
+      modal.style.display = 'flex';
+    });
+  });
+  $('#closeModal').addEventListener('click', ()=> modal.style.display = 'none');
+  modal.addEventListener('click', (e)=>{ if(e.target === modal) modal.style.display='none' });
+
+  // ====== Contact form (mailto fallback) ======
+  $('#sendBtn').addEventListener('click', ()=>{
+    const name = $('#name').value.trim();
+    const email = $('#email').value.trim();
+    const subject = $('#subject').value.trim() || 'Contact from portfolio';
+    const message = $('#message').value.trim();
+    if(!name || !email || !message){ alert('Isi semua field yang wajib.'); return; }
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+    window.location.href = `mailto:kevinalfaridzi5555@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+  });
+
+  // ====== Copy email & download CV demo ======
+  $('#copyEmail').addEventListener('click', async ()=>{
+    const email = 'kevinalfaridzi5555@gmail.com';
+    try{
+      await navigator.clipboard.writeText(email);
+      alert('Email disalin: ' + email);
+    }catch(e){
+      prompt('Copy manual:', email);
+    }
+  });
+  $('#downloadCV').addEventListener('click', ()=> {
+    // demo: create simple text CV file. Replace with actual file link if exists.
+    const cv = `Hai!\nMakasih udah mau download dan buka file ini;)\nSemoga hari kamu menyenangkan selalu!!!\n`;
+    const blob = new Blob([cv], {type:'text/plain'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'Kevin_Al_Faridzi_CV.txt'; document.body.appendChild(a); a.click();
+    a.remove(); URL.revokeObjectURL(url);
+  });
+  $('#downloadBtn').addEventListener('click', ()=> $('#downloadCV').click());
+
+  // ====== Mobile menu toggle (simple) ======
+  $('#menuMobile').addEventListener('click', ()=>{
+    const nav = document.querySelector('nav.links');
+    nav.style.display = nav.style.display === 'flex' ? '' : 'flex';
+    nav.style.flexDirection = 'column';
+    nav.style.position = 'absolute';
+    nav.style.right = '28px';
+    nav.style.top = '64px';
+    nav.style.background = 'rgba(0,0,0,0.6)';
+    nav.style.padding = '12px';
+    nav.style.borderRadius = '10px';
+  });
+
+  // ====== Smooth scroll for anchor links ======
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click', (e)=>{
+      const href = a.getAttribute('href');
+      if(!href || href === '#') return;
+      e.preventDefault();
+      const el = document.querySelector(href);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    });
+  });
+
+  // ====== Project card keyboard accessible: open with Enter ======
+  $$('.project-card').forEach(card=>{
+    card.setAttribute('tabindex','0');
+    card.addEventListener('keydown', (e)=>{ if(e.key === 'Enter') card.querySelector('.viewProject').click(); });
+  });
+
+  // small link handlers demo
+  $('#openGithub').addEventListener('click', ()=> window.open('https://github.com/', '_blank'));
+  $('#openDiscord').addEventListener('click', ()=> alert('Discord link placeholder'));
+
+  </script>
+</body>
+</html>
